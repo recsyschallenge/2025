@@ -80,27 +80,98 @@
 	    top</a></sup>
 	</h2>
           <p align="justify">
-              TBA
+              The Ekstra Bladet RecSys Challenge aims to predict which article a user will click from a list of
+              articles that was seen during a specific impression. Utilizing the user's browsing history, session
+              details (like time and device used), and personal metadata (including gender and age), along with a list
+              of candidate news articles, listed in an impression log. The challenge's objective is to rank the
+              candidate articles based on the user's personal preferences. This involves developing models that
+              encapsulate both the users and the articles through their content and the users' interests.
+              The models are to estimate the likelihood of a user clicking each article by evaluating the compatibility
+              between the article's content and the user's preferences. The articles are ranked based on these
+              likelihood scores, and the precision of these rankings is measured against the actual selections
+              made by users.
           </p>
-<!--    <p align="justify">-->
-<!--        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis volutpat sapien, sed lacinia eros-->
-<!--        laoreet eu. Cras tempus dapibus felis, ut suscipit magna auctor quis. In ornare metus leo, id auctor erat-->
-<!--        ullamcorper ac. Cras bibendum dapibus libero at posuere. Sed cursus tristique vehicula. Nunc venenatis at-->
-<!--        metus consequat dapibus. Proin facilisis nunc felis, in rhoncus felis fringilla ut. Donec vel molestie nisl.-->
-<!--        Curabitur suscipit velit a ultrices luctus.-->
-<!--   	</p>-->
-<!--	<p align="justify">-->
-<!--        Cras arcu nunc, facilisis aliquam rutrum nec, tempus ut massa. Sed lacinia in ipsum non dapibus. Nulla interdum-->
-<!--        turpis vitae nunc posuere posuere. Curabitur in elit eget diam ultrices pharetra. Nunc et egestas augue. Etiam-->
-<!--        porta purus ex, quis ultricies nisl malesuada sed. Vestibulum egestas lacus ut scelerisque mollis. Mauris at-->
-<!--        laoreet metus, in interdum urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur-->
-<!--        ridiculus mus.-->
-<!--	</p>-->
     <br>
+          <h2>Evaluation<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+              top</a></sup>
+          </h2>
+          <p align="justify">
+              To evaluate the models we use several standard metrics in the recommendation field, including the area
+              under the ROC curve (AUC), mean reciprocal rank (MRR), and normalized discounted cumulative gain
+              (nDCG@K) for K shown recommendations. To address the normative complexities inherent in news
+              recommendations, the test set incorporates samples specifically designed to assess models based on
+              normative properties. This includes evaluating models on Beyond-Accuracy Objectives, such as
+              intra-list diversity, serendipity, novelty, coverage, among others. The final result is the average
+              of these metrics across all impression logs.
+          </p>
+          <br>
     <h2>DataSet<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
             top</a></sup>
 	</h2>
-          <p><h3>TBA</h3></p>
+          <p>The <b>E</b>kstra <b>B</b>ladet <b>Ne</b>ws <b>R</b>ecommendation <b>D</b>ataset (EB-NeRD) is a large-scale
+              Danish dataset created by <a href="https://ekstrabladet.dk">Ekstra Bladet</a> to support advancements and benchmarking
+              in news recommendation research. EB-NeRD comprises over 2.7 million users and more than 600 million impression
+              logs from Ekstra Bladet. Alongside, we offer a collection of more than 120 thousands news articles, enriched
+              with textual content features such as titles, abstracts, and bodies. This enables text features in a
+              low-resource language as context for recommender systems.</p>
+          <h3 id="introduction" class="content-title">EBNeRD</h3>
+          <p style="text-align: justify">
+              To support advancements in news recommendation research, we have constructed the Ekstra Bladet News
+              Recommendation Dataset (EB-NeRD). It was collected from the user behavior logs at
+              <a href=https://ekstrabladet.dk/">Ekstra Bladet</a>. We collected behavior logs from
+              active users during the 6 weeks from April 27th to June 8, 2023. This timeframe was selected to
+              avoid major events, e.g., holidays or elections, that could trigger atypical behavior at Ekstra
+              Bladet.
+              <br>
+              The active users were defined as users who had at least 5 and at most 1,000 news click records in a
+              three-week period from May 18th to June 8, 2023. In order to protect user privacy, every user was
+              de-linked from the production system when securely hashed into an anonymized ID using onetime
+              <a href="https://en.wikipedia.org/wiki/Salt">salt mapping</a>. Alongside, we provide <b>X</b>
+              Danish news articles published by Ekstra Bladet. Each article is enriched with textual context
+              features such as title, abstract, and body.
+          </p>
+          <h3 id="dataset-format" class="content-title">Dataset Format</h3>
+          <p>
+              Both the training, validation, and test data are a zip-compressed folder, which contains <b>X</b>
+              different files:
+          </p>
+          <!-- TABLE -->
+          <div id="table-dataset-format" class="row justify-content-center">
+              <table class="table table-striped w-auto">
+                  <thead>
+                  <tr>
+                      <th><b>#</b> </th>
+                      <th><b>File Name</b> </th>
+                      <th><b>Description</b></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>1</td>
+                      <td>behaviors.parquet</td>
+                      <td>The impression logs</td>
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>history.parquet</td>
+                      <td>The click histories of users</td>
+                  </tr>
+                  <tr>
+                      <td>3</td>
+                      <td>articles.parquet</td>
+                      <td>The information of news articles</td>
+                  </tr>
+                  <tr>
+                      <td>4</td>
+                      <td>artifacts.parquet</td>
+                      <td>The embeddings of the articles textual information</td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>
+          <p><em>For further details, please refer to the  <a href="https://recsys.eb.dk/dataset.html">
+              dedicated website of Ekstra Bladet</a>.</em>
+             </p>
           <br>
 	<h2>Prize<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
             top</a></sup>
@@ -108,10 +179,10 @@
     <p align="justify">
 		<ul>
             <li> 
-            	First three teams from the participants - $2500/$1500/$1000
+            	First three teams from the participants - $3500/$2500/$1500
         	</li>
         	<li> 
-            	Special prize for the academic teams - $1500
+            	Special prize for the academic teams - $2500
         	</li>
 		</ul>
 	</p>
@@ -124,7 +195,12 @@
               <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>top</a>
               </sup>
          </h1>
-        <p><h3>TBA</h3></p>
+        <div class="wrapper">
+            <strong>Registration &amp; Data Access is open now!</strong><br>
+            <a href="https://recsys.eb.dk/" target="_blank">
+                <button type="button" class="btn btn-lg  btn-primary button">Registration &amp; Data Access</button>
+            </a>
+        </div>
     </div>
     <br>
     <br>
@@ -141,20 +217,20 @@
             </thead>
             <tbody>
                <tr>
-                  <td>4 March, 2024</td>
+                  <td>6 March, 2024</td>
                   <td>
                      <strong>Start RecSys Challenge</strong>
                      <p>Release dataset</p>
                   </td>
                </tr>
                <tr>
-                  <td>11 March, 2024</td>
+                  <td>18 March, 2024</td>
                   <td>
                      <strong>Submission System Open</strong>
                   </td>
                </tr>
                <tr>
-                  <td>14 March, 2024</td>
+                  <td>21 March, 2024</td>
                   <td>
                      <strong>Leaderboard live</strong>
                   </td>
@@ -210,56 +286,6 @@
       <br>
 
 
-      <br>	
-      <!--p align="justify">
-        Watch this space for more information and launch of the challenge. Coming soon! 
-      </p-->
-  
-      <!-- GUIDELINES -->
-      <div id="guidelines" class="lead">
-        <h1>
-         	Paper Submission Guidelines<sup><a class="dropup" style="font-size:10px;" href="#top"><span
-            class="caret"></span> top</a></sup>
-        </h1>
-<!--          <p><h3>TBA</h3></p>-->
-        <p>
-            <font color="green"><strong>Submission website:</strong></font>
-            <a target="_blank" href="https://easychair.org/">EasyChair</a>
-        </p>
-        <ul>
-            <li>All participants of the challenge are invited to submit if they consider their submission particularly
-               effective, novel, otherwise interesting, or exploiting identified particularities of the data.
-            </li>
-            <li>
-               <font color="green"><strong>Note:</strong></font> paper submission is mandatory if you want to be
-               eligible for a prize. Accepted papers are given a presentation slot at the
-               workshop. At least one author of each accepted paper must attend the workshop and present their work.
-               Please note that a badly written paper or absence of presence at workshop, may prevent you from being
-               eligible for the prize. Please contact the workshop organization if none of the authors will be able to
-               attend the workshop.
-            </li>
-            <li>
-               <font color="green"><strong>Page limit:</strong></font> 7 pages + references (<a
-                  href="https://www.acm.org/publications/proceedings-template">ACM SIG Format</a>)
-               Note: This is in reference to the latest single-column ACM template.
-            </li>
-            <li>Anonymization of submissions is not required; please include your team name in abstract and text, as
-               well as a link to your code repository, the achieved score, and a reference to the RecSys Challenge
-               Website (<a href="https://www.recsyschallenge.com/2024/">https://www.recsyschallenge.com/2024/</a>). Note:
-               This will be replaced with a reference to an overview paper in the RecSys proceedings for the
-               camera-ready version.
-            </li>
-            <li>
-               <font color="green"><strong>Submission website:</strong></font> <a href="https://easychair.org/">EasyChair</a>
-               </li>
-            <li>The submitted papers will be evaluated based on novelty, clarity, and presented empirical results.</li>
-            <li>Each paper will be reviewed by at least three PC members.</li>
-            <li>Accepted papers will be published in the ACM Digital Library.</li>
-            <li>Our proceedings will be published in the ACM Digital Library within its International Conference Proceedings Series.</li>
-            <li>Accepted papers must be presented in the RecSys Challenge Workshop.</li>
-        </ul>
-      </div>
-      <br>
       <br>
       <div class="lead" id="program">
 
