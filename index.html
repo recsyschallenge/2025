@@ -4,10 +4,10 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="RecSys Challenge 2024">
+    <meta name="description" content="RecSys Challenge 2025">
     <meta name="keywords" content="Recommender Systems, RecSys Challenge">
-    <meta name="author" content="RecSysChallenge 2024 Organizers">
-    <title>RecSys Challenge 2024</title>
+    <meta name="author" content="RecSysChallenge 2025 Organizers">
+    <title>RecSys Challenge 2025</title>
     <!-- CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/ekko-lightbox.min.css" rel="stylesheet">
@@ -28,19 +28,16 @@
                    src="./images/ico-twitter.svg" alt="" width="24">
                 </a-->
             </span>
-        <h3><a href="http://recsyschallenge.com/2024" style="text-decoration:none;">
-            RecSys Challenge 2024</a>
+        <h3><a href="http://recsyschallenge.com/2025" style="text-decoration:none;">
+            RecSys Challenge 2025</a>
         </h3>
         <div style="margin-top:20px;font-family: Arial,sans-serif">
             <ul class="nav nav-pills navbar-nav navbar-left">
                 <li role="presentation"><a href="#about">About</a></li>
                 <li role="presentation"><a href="#dates">Timeline</a></li>
-                <!--<li role="presentation"><a href="#publications">Publications</a></li>-->
                 <li role="presentation"><a href="#participation">Participation</a></li>
-                <!--<li role="presentation"><a href="#dataset">Dataset</a></li>-->
-                <li role="presentation"><a href="#program">Program</a></li>
+                <li role="presentation"><a href="#dataset">Dataset</a></li>
                 <li role="presentation"><a href="#organizers">Organization</a></li>
-                <li role="presentation"><a href="./assets/CfS_2025.pdf" target="\_blank">Call 2025</a></li>
             </ul>
         </div>
     </div>
@@ -53,23 +50,7 @@
         </h1>
     </div>
     <p align="justify">
-
-        The RecSys 2024 Challenge will be organized by Johannes Kruse and Kasper Lindskow (Ekstra Bladet),
-        Anshuk Uppal, Michael Riis Andersen, and Jes Frellsen (Technical University of Denmark),
-        Marco Polignano (University of Bari Aldo Moro, Italy), Claudio Pomo (Politecnico di Bari, Italy),
-        and Abhishek Srivastava (IIM Visakhapatnam, India) based on the data provided by Ekstra Bladet. This year’s
-        challenge focuses on online news recommendation, addressing both the technical and normative
-        challenges inherent in the design of effective and responsible recommender systems for news publishing.
-    </p>
-    <p align="justify">
-        The challenge will delve into the unique aspects of news recommendation. These include modeling user
-        preferences based on implicit behavior, accounting for the influence of the news agenda on user interests, and
-        managing the rapid decay of news items. Furthermore, our challenge also embraces the normative complexities.
-        These involve investigating the effects of recommender systems on the news flow, and whether they resonate
-        with editorial values. By providing participants with a comprehensive dataset and a robust news recommendation
-        evaluation framework, our goal is to tackle these multifaceted challenges head-on. As part of the challenge,
-        Ekstra Bladet will be releasing an anonymized dataset with approximately 2 million random users who engaged
-        with EkstraBladet.dk over a six-week period.
+        TBA
     </p>
 
 
@@ -78,116 +59,28 @@
         top</a></sup>
     </h2>
     <p align="justify">
-        The Ekstra Bladet RecSys Challenge aims to predict which article a user will click from a list of
-        articles that was seen during a specific impression. Utilizing the user's browsing history, session
-        details (like time and device used), and personal metadata (including gender and age), along with a list
-        of candidate news articles, listed in an impression log. The challenge's objective is to rank the
-        candidate articles based on the user's personal preferences. This involves developing models that
-        encapsulate both the users and the articles through their content and the users' interests.
-        The models are to estimate the likelihood of a user clicking each article by evaluating the compatibility
-        between the article's content and the user's preferences. The articles are ranked based on these
-        likelihood scores, and the precision of these rankings is measured against the actual selections
-        made by users.
+        TBA
     </p>
     <br>
     <h2>Evaluation<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
         top</a></sup>
     </h2>
     <p align="justify">
-        To evaluate the models we use several standard metrics in the recommendation field, including the area
-        under the ROC curve (AUC), mean reciprocal rank (MRR), and normalized discounted cumulative gain
-        (nDCG@K) for K shown recommendations. To address the normative complexities inherent in news
-        recommendations, the test set incorporates samples specifically designed to assess models based on
-        normative properties. This includes evaluating models on Beyond-Accuracy Objectives, such as
-        intra-list diversity, serendipity, novelty, coverage, among others. The final result is the average
-        of these metrics across all impression logs.
+        TBA
     </p>
     <br>
     <h2 id="dataset">DataSet<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
         top</a></sup>
     </h2>
-    <p>The <b>E</b>kstra <b>B</b>ladet <b>Ne</b>ws <b>R</b>ecommendation <b>D</b>ataset (EB-NeRD) is a large-scale
-        Danish dataset created by <a href="https://ekstrabladet.dk">Ekstra Bladet</a> to support advancements and benchmarking
-        in news recommendation research. EB-NeRD comprises over 2.7 million users and more than 600 million impression
-        logs from Ekstra Bladet. Alongside, we offer a collection of more than 120 thousands news articles, enriched
-        with textual content features such as titles, abstracts, and bodies. This enables text features in a
-        low-resource language as context for recommender systems.</p>
-    <h3 id="introduction" class="content-title">EBNeRD</h3>
-    <p style="text-align: justify">
-        To support advancements in news recommendation research, we have constructed the Ekstra Bladet News
-        Recommendation Dataset (EB-NeRD). It was collected from the user behavior logs at
-        <a href=https://ekstrabladet.dk/">Ekstra Bladet</a>. We collected behavior logs from
-        active users during the 6 weeks from April 27th to June 8, 2023. This timeframe was selected to
-        avoid major events, e.g., holidays or elections, that could trigger atypical behavior at Ekstra
-        Bladet.
-        <br>
-        The active users were defined as users who had at least 5 and at most 1,000 news click records in a
-        three-week period from May 18th to June 8, 2023. In order to protect user privacy, every user was
-        de-linked from the production system when securely hashed into an anonymized ID using onetime
-        <a href="https://en.wikipedia.org/wiki/Salt">salt mapping</a>. Alongside, we provide Danish news articles
-        published by Ekstra Bladet. Each article is enriched with textual context features such as title,
-        abstract, body, categories, among others. Furthermore, we provide features that have been generated by
-        proprietary models, including topics, named entity recognition (NER), and article embeddings.
+    <p>TBA
     </p>
-    <h3 id="dataset-format" class="content-title">Dataset Format</h3>
-    <p>
-        Each dataset bundle—demo, small, and large—consists of a training set and validation set, together with
-        the articles (articles.parquet) present in the bundle. The official test set is to be downloaded
-        separately from these. Each data split has two files: 1) the behavior logs for the 7-day data split
-        period (behaviors.parquet) and 2) the users' click histories (history.parquet), i.e., 28 days of clicked
-        news articles prior to the data split's behavior logs. The click histories are fixed to the period prior
-        to the behavior logs; i.e., they are not updated within the data split period.
-    </p>
-    <!-- TABLE -->
-    <div id="table-dataset-format" class="row justify-content-center">
-        <table class="table table-striped w-auto">
-            <thead>
-            <tr>
-                <th><b>#</b> </th>
-                <th><b>File Name</b> </th>
-                <th><b>Description</b></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>behaviors.parquet</td>
-                <td>The impression logs</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>history.parquet</td>
-                <td>The click histories of users</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>articles.parquet</td>
-                <td>The information of news articles</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>artifacts.parquet</td>
-                <td>The embeddings of the articles textual information</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <p><em>For further details, please refer to the  <a href="https://recsys.eb.dk/dataset/">
-        dedicated website of Ekstra Bladet</a>.</em>
-    </p>
+
     <br>
     <h2>Prize<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
         top</a></sup>
     </h2>
     <p align="justify">
-    <ul>
-        <li>
-            First three teams from the participants - $3500/$2500/$1500
-        </li>
-        <li>
-            Special prize for the academic teams - $2500
-        </li>
-    </ul>
+    TBA
     </p>
     <br>
     <br>
@@ -198,12 +91,7 @@
             <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>top</a>
             </sup>
         </h1>
-        <div class="wrapper">
-            <strong>Registration &amp; Data Access is open now!</strong><br>
-            <a href="https://recsys.eb.dk/" target="_blank">
-                <button type="button" class="btn btn-lg  btn-primary button">Registration &amp; Data Access</button>
-            </a>
-        </div>
+        TBA
     </div>
     <br>
     <br>
@@ -211,80 +99,7 @@
         <h1>Timeline <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
             top</a></sup>
         </h1>
-        <table class="table table-striped lead">
-            <thead>
-            <tr>
-                <th>When?</th>
-                <th>What?</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>8 March, 2024</td>
-                <td>
-                    <strong>Start RecSys Challenge</strong>
-                    <p>Release dataset</p>
-                </td>
-            </tr>
-            <tr>
-                <td>25 March, 2024</td>
-                <td>
-                    <strong>Submission System Open</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>4 April, 2024</td>
-                <td>
-                    <strong>Leaderboard live</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>21 June, 2024</td>
-                <td>
-                    <strong>End RecSys Challenge</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>24 June, 2024</td>
-                <td>
-                    <strong>Final Leaderboard & Winners</strong>
-                    <p>EasyChair open for submissions</p>
-                </td>
-            </tr>
-            <tr>
-                <td>1 July, 2024</td>
-                <td>
-                    <strong>Code Upload</strong>
-                    <p>Upload code of the final predictions</p>
-                </td>
-            </tr>
-            <tr>
-                <td>18 July, 2024 <s>15 July, 2024</s></td>
-                <td>
-                    <strong>Paper Submission Due</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>3 August, 2024</td>
-                <td>
-                    <strong>Paper Acceptance Notifications</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>29 August, 2024</td>
-                <td>
-                    <strong>Camera-Ready Papers</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>October 2024</td>
-                <td>
-                    <strong>RecSys Challenge Workshop</strong>
-                    <p>@ <a href="https://recsys.acm.org/recsys24/">ACM RecSys 2024</a></p>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        TBD
     </div>
     <br>
     <div id="guidelines" class="lead">
@@ -292,110 +107,9 @@
             Paper Submission Guidelines<sup><a class="dropup" style="font-size:10px;" href="#top"><span
                 class="caret"></span> top</a></sup>
         </h1>
-        <p>
-            <font color="green"><strong>Submission website:</strong></font>
-            <a href="https://easychair.org/my/conference?conf=recsys2024" target="_blank">EasyChair</a>
-        </p>
-        <ul>
-            <li>All participants of the challenge are invited to submit if they consider their submission particularly
-                effective, novel, otherwise interesting, or exploiting identified particularities of the data.
-            </li>
-            <li>
-                <font color="green"><strong>Note:</strong></font> paper submission is mandatory if you want to be
-                eligible for a prize. Accepted papers are given a presentation slot at the
-                workshop. At least one author of each accepted paper must attend the workshop and present their work.
-                Please note that a badly written paper or absence of presence at workshop, may prevent you from being
-                eligible for the prize. Please contact the workshop organization if none of the authors will be able to
-                attend the workshop.
-            </li>
-            <li>
-                <font color="green"><strong>Page limit:</strong></font> 4 pages + 1 page for references (<a
-                    href="https://www.acm.org/publications/proceedings-template">ACM SIG Format</a>) in double column
-                format.
-                Instructions for Word and LaTeX authors are given below:
-                <ul>
-                    <li><strong>Microsoft Word</strong>: Write your paper using
-                        <a href="https://www.acm.org/binaries/content/assets/publications/word_style/interim-template-style/interim-layout.docx" target="_blank" rel="noopener">ACM’s interim template</a>.
-                        Follow the embedded instructions to apply the paragraph styles to your various text elements.
-                        The text is in double-column format and no additional formatting is required at this stage.
-                    </li>
-                    <li><strong>LaTeX</strong>: Please use the latest version of the <a href="https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip" target="_blank" rel="noopener">Primary Article Template</a>
-                        – LaTeX to create your submission.Start the document with the
-                        <span style="font-family: monospace;">\documentclass[sigconf]{acmart}</span>
-                        command to generate the output in a double-column format. Please see the
-                        <a href="https://portalparts.acm.org/hippo/latex_templates/acmart.pdf" target="_blank" rel="noopener">LaTeX documentation</a>
-                        and <a href="https://www.acm.org/publications/taps/latex-best-practices" target="_blank" rel="noopener">ACM’s LaTeX best practices guide</a>
-                        for further instructions, <strong>ignoring the single-column instructions</strong>.
-                        Do not use the “manuscript” option, otherwise the document will not be compiled in double-column,
-                        as required. Check the sample-sigconf.tex file included in the template package for a formatting example.
-                        To ensure 100% <strong>compatibility</strong> with The ACM Publishing System (TAPS), please <strong>restrict the use of packages</strong>
-                        to the <a href="https://www.acm.org/publications/taps/whitelist-of-latex-packages" target="_blank" rel="noopener">whitelist of approved LaTeX packages</a>.</li>
-                </ul>
-            </li>
-            <li>Anonymization of submissions is not required; please include your team name in abstract and text, as
-                well as a link to your code repository, the achieved score, and a reference to the RecSys Challenge
-                Website (<a href="http://www.recsyschallenge.com/2024/">http://www.recsyschallenge.com/2024/</a>). Note:
-                This will be replaced with a reference to an overview paper in the RecSys proceedings for the
-                camera-ready version.
-            </li>
-            <li>
-                <font color="green"><strong>Submission website:</strong></font> <a href="https://easychair.org/my/conference?conf=recsys2024" target="_blank">EasyChair</a>
-            </li>
-            <li>The topics of interest include, but are not limited to:
-                <ul>
-                    <li>Benchmarking and evaluation of recommender systems on EB-NeRD</li>
-                    <li>Novel model architectures for news recommendation</li>
-                    <li>Dataset analyses and preprocessing techniques</li>
-                    <li>Contributions focused on beyond accuracy, such as fairness, diversity, coverage, etc.</li>
-                    <li>Scalability and efficiency of recommendation algorithms</li>
-                    <li>Cross-domain and multi-modal recommendations</li>
-                </ul>
-                Furthermore, we ask that solutions using all features, including those that may yield information not
-                available in a live setup, and <b>report results both with and without these features</b>
-                (as discussed <a href=https://www.codabench.org/forums/2387/342/ target="_blank" rel="noopener">here</a>)
-            </li>
-            <li>The submitted papers will be evaluated based on novelty, clarity, and presented empirical results.</li>
-            <li>Each paper will be reviewed by at least three PC members.</li>
-            <li>Our proceedings will be published in the ACM Digital Library within its International Conference Proceedings Series.</li>
-            <li>Accepted papers must be presented in the RecSys Challenge Workshop.</li>
-        </ul>
+        TBD
     </div>
     <br>
-    <div class="lead" id="program">
-        <h1>Workshop Program and Accepted Papers<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
-            top</a></sup>
-        </h1>
-        <em>The RecSys Challenge Workshop will take place on October 14th, 2024<br> <strong> All times are CET</strong></em>
-        <table class="table table-striped lead">
-            <tbody>
-<!--            <tr>-->
-<!--                <th>Time</th>-->
-<!--                <th> Session </th>-->
-<!--            </tr>-->
-            <tr style="color:gray;"><td>09:00-10:30</td><td><strong>Session 1</strong></td></tr>
-            <tr><td>9:00-9:15</td><td><strong>Opening</strong></td></tr>
-            <tr><td>9:15-10:00</td><td><strong>Keynote Speech</strong> <em>Balancing Accuracy and Editorial Values in News Recommendations</em> --- Kasper Lindskow, Ph.d., Head of AI at JP/Politikens Media Group</td></tr>
-            <tr><td>10:00-10:15</td><td><strong>Leveraging User History with Transformers for News Clicking: The DArgk Approach</strong> --- Juan Manuel Rodriguez and Antonela Tommasel</td></tr>
-            <tr><td>10:15-10:30</td><td><strong>Recommendations for the Recommenders: Reflections on Prioritizing Diversity in the RecSys</strong> --- Lucien Heitz, Sanne Vrijenhoek and Oana Inel</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr style="background-color:#d1e7dd;"><td>10:30-11:15</td><td>Coffee Break</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr style="color:gray;"><td>11:15-12:45</td><td><strong>Session 2</strong></td></tr>
-            <tr><td>11:25-11:45</td><td><strong>Enhancing News Recommendation with Transformers and Ensemble Learning (🥇)</strong> --- Kazuki Fujikawa, Naoki Murakami, and Yuki Sugawara</td></tr>
-            <tr><td>11:45-12:05</td><td><strong>Large Scale Hierarchical User Interest Modeling for Click-through Rate Prediction (🥈)</strong> --- Taofeng Xue, Zhimin Lin, Zhijian Zhang, Linsen Guo, Haoru Chen, Mengjiao Bao, and Peng Yan</td></tr>
-            <tr><td>12:05-12:25</td><td><strong>Harnessing Temporal Dynamics and Content: An Ensemble of Gradient Boosting Machines for News Recommendation (🥉)</strong> --- Tomomu Iwai, Akihiro Tomita, Tomoyuki Arai, Hiroki Ogawa, and Takuma Saito</td></tr>
-            <tr><td>12:25-12:45</td><td><strong>Exploiting Contextual Normalizations and Article Endorsement for News Recommendation (🥇)</strong> --- Andrea Alari, Lorenzo Campana, Federico Giuseppe Ciliberto, Saverio Maggese, Carlo Sgaravatti, Francesco Zanella, Andrea Pisani, and Maurizio Ferrari Dacrema</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr style="background-color:#d1e7dd;"><td>12:45-14:30</td><td>Lunch Break</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr style="color:gray;"><td>14:30-16:00</td><td><strong>Session 3</strong></td></tr>
-            <tr><td>14:50-15:10</td><td><strong>Enhancing News Recommendation with Real-Time Feedback and Generative Sequence Modeling</strong> --- Qi Zhang, Jieming Zhu, Jiansheng Sun, Guohao Cai, Ruining Yu, Bangzheng He, and Liangbi Li</td></tr>
-            <tr><td>15:10-15:30</td><td><strong>DIVAN: Deep-Interest Virality-Aware Network to Exploit Temporal Dynamics in News Recommendation</strong> --- Antonio Ferrara, Marco Valentini, Paolo Masciullo, Antonio De Candia, Davide Abbattista, Riccardo Fusco, Claudio Pomo, Vito Walter Anelli, Giovanni Maria Biancofiore, Ludovico Boratto, and Fedelucio Narducci</td></tr>
-            <tr><td>15:30-15:50</td><td><strong>Leveraging LightGBM Ranker for Efficient Large-Scale News Recommendation Systems</strong> --- Tetsuro Sugiura, Yosuke Yamagishi, and Yodai Kishimoto</td></tr>
-            <tr><td>15.50-16:00</td><td><strong>Winners' Ceremony (🥇 🥈 🥉) & Closing Remarks</strong></td></tr>
-            </tbody>
-        </table>
-    </div>
 
     <br>
     <div id="organizers" class="lead">
@@ -405,17 +119,7 @@
         <h2>Workshop Program Committee <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
             top</a></sup>
         </h2>
-        <ul>
-            <li>Luca Belli, Sator Labs</li>
-            <li>Alejandro Bellogin, Universidad Autonoma de Madrid</li>
-            <li>Ludovico Boratto, University of Cagliari</li>
-            <li>Manoj Reddy Dareddy, University of California</li>
-            <li>Dietmar Jannach, University of Klagenfurt</li>
-            <li>Olivier Jeunen, ShareChat UK</li>
-            <li>Nikolas Landia, Dressipi</li>
-            <li>Julia Neidhardt, TU Wien</li>
-            <li>Marko Tkalcic, University of Primorska</li>
-        </ul>
+        TBA
         <br><br>
     </div>
     <!-- /.container -->
