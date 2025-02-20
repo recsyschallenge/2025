@@ -44,13 +44,18 @@
     <!-- ABOUT -->
     <div id="about" class="lead">
         <h1>About<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret">
-         	
          </span>
             top</a></sup>
         </h1>
     </div>
     <p align="justify">
-        TBA
+        The RecSys 2025 Challenge will be organized by Jacek Dąbrowski, Maria Janicka, Łukasz Sienkiewicz and Gergo Stomfai (Synerise), Dietmar Jannach (University of Klagenfurt, Austria), Marco Polignano (University of Bari Aldo Moro, Italy), Claudio Pomo (Politecnico di Bari, Italy), Abhishek Srivastava (IIM Visakhapatnam, India), and Francesco Barile (Maastricht University, Netheralnds).
+    </p>
+    <p align="justify">
+        The challenge is designed to promote a unified approach to behavior modeling. Many modern enterprises rely on machine learning and predictive analytics for improved business decisions. Common predictive tasks in such organizations include recommendation, propensity prediction, churn prediction, user lifetime value prediction, and many others. A central piece of information that is used for these predictive tasks are logs of past behavior of users e.g., what they bought, what they added to their shopping cart, which pages they visited. Rather than treating these tasks as separate problems, we propose a unified modeling approach.
+    </p>
+    <p align="justify">
+        To achieve this, we introduce the concept of Universal Behavioral Profiles—user representations that encode essential aspects of each individual’s past interactions. These profiles are designed to be universally applicable across multiple predictive tasks, such as churn prediction and product recommendations. By developing representations that capture fundamental patterns in user behavior, we enable models to generalize effectively across different applications.
     </p>
 
 
@@ -59,21 +64,168 @@
         top</a></sup>
     </h2>
     <p align="justify">
-        TBA
+        The objective of this challenge is to develop Universal Behavioral Profiles  based on the provided data, which includes various types of events such as product buy, add to cart, remove from cart, page visit, and search query. These user representations will be evaluated based on their ability to generalize across a range of predictive tasks. The task of the challenge participants is to submit user representations, which will serve as inputs to a simple neural network architecture. Based on the submitted representations, models will be trained on several tasks, including some that are disclosed to participants, called "open tasks," as well as additional hidden tasks. The final performance score will aggregate results from all tasks. We iterate model training and evaluation automatically upon submission, the task of the participants is to submit universal user representations.
     </p>
+    <p align="justify">
+        <strong>Open Tasks</strong>:
+        <ul>
+            <li>
+                <strong>Churn Prediction</strong>: Using the submitted user representations, the model will predict whether an active user (defined as one with at least one product-buy event) will churn, i.e., make no purchases within the next 14 days.
+            </li>
+            <li>
+                <strong>Product Propensity</strong>: Using the submitted user representations, the model will predict products which a user is most likely to purchase within the next 14 days, from a predefined subset of items. 
+            </li>
+            <li>
+                <strong>Category Propensity</strong>: Using the submitted user representations, the model will predict the categories in which a user is most likely to make a purchase within the next 14 days, from a predefined subset of categories.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>Hidden Tasks</strong>:
+        <p align="justify">
+            In addition to the open tasks, the challenge includes hidden tasks, which remain undisclosed during the competition. The purpose of these tasks is to ensure that submitted Universal Behavioral Profiles are capable of generalization rather than being fine-tuned for specific known objectives. Similar to the open tasks, the hidden tasks focus on predicting user behavior based on the submitted representations, but they introduce new contexts that participants are not explicitly optimizing for.
+            After the competition concludes, the hidden tasks will be disclosed along with the corresponding code, allowing participants to replicate results.
+        </p>
     <br>
     <h2>Evaluation<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
         top</a></sup>
     </h2>
     <p align="justify">
-        TBA
+        The primary metric by which we measure model performance is AUROC. Additionally, the performance of category propensity and product recommendation models is evaluated based on the novelty and diversity of the results. In these cases, the task’s score is derived as a weighted sum of all metrics. The final score, which evaluates the quality of user representations and their ability to generalize, is determined by aggregating ranks from the per-task leaderboards.
     </p>
     <br>
     <h2 id="dataset">DataSet<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
         top</a></sup>
     </h2>
-    <p>TBA
+    <p align="justify">
+        The challenge organizers will publish an anonymized dataset containing real-world user interaction logs. All recorded interactions can be utilized to create Universal Behavioral Profiles; however, participants will be required to submit behavioral profiles only for a subset of users, which will be used for model training and evaluation. 
     </p>
+    <p align="justify">
+        The data will consist of four types of events and product attributes:
+    </p>
+    <p align="justify">
+        <strong>product_buy</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client (user).
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>add_to_cart</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client (user).
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>remove_from_cart</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client (user).
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>product_properties</strong>
+        <ul>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+            <li>
+                category (int64): Numeric ID of the item category.
+            </li>
+            <li>
+                price (int64): Numeric ID of the item's price bucket.
+            </li>
+            <li>
+                embedding (object): A textual embedding of a product name, compressed using the product quantization method.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>page_visit</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client.
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                url (int64): Numeric ID of a visited URL. The explicit information about what (e.g., which item) is presented on a particular page is not provided.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>search_query</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client.
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                query (object): The textual embedding of the search query, compressed using the product quantization method.
+            </li>
+        </ul>
+    </p>
+
+    <table class="table table-striped w-auto">
+        <thead>
+            <tr>
+                <th><strong>Event type</strong></th>
+                <th><strong>Number of events</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><em>product_buy</em></td>
+                <td>~17000</td>
+            </tr>
+            <tr>
+                <td><em>add_to_cart</em></td>
+                <td>~5 200 000</td>
+            </tr>
+            <tr>
+                <td><em>remove_from_cart</em></td>
+                <td>~1 700 000</td>
+            </tr>
+            <tr>
+                <td><em>page_visit</em></td>
+                <td>~150 000 000</td>
+            </tr>
+            <tr>
+                <td><em>search_query</em></td>
+                <td>~9 700 000</td>
+            </tr>
+        
+            <tr>
+            <td><em>Total number of unique users</em></td>
+            <td>~19 000 000</td>
+            </tr>
+        </tbody>
+    </table>
 
     <br>
     <h2>Prize<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
@@ -91,15 +243,97 @@
             <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>top</a>
             </sup>
         </h1>
-        TBA
+        <div class="wrapper">
+            <strong>Registration &amp; Data Access will open on [DATE]</strong><br>
+        <!--
+            <strong>Registration &amp; Data Access is open now!</strong><br>
+                 <a href="https://recsys.eb.dk/" target="_blank">
+                <button type="button" class="btn btn-lg  btn-primary button">Registration &amp; Data Access</button>
+            </a>  -->
+        </div>
     </div>
+
+
     <br>
     <br>
     <div id="dates">
         <h1>Timeline <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
             top</a></sup>
         </h1>
-        TBD
+        <table class="table table-striped lead">
+            <thead>
+            <tr>
+                <th>When?</th>
+                <th>What?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>10 March, 2025</td>
+                <td>
+                    <strong>Start RecSys Challenge</strong>
+                    <p>Release dataset</p>
+                </td>
+            </tr>
+            <tr>
+                <td>10 April, 2025</td>
+                <td>
+                    <strong>Submission System Open</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>10 April, 2025</td>
+                <td>
+                    <strong>Leaderboard live</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>15 June, 2025</td>
+                <td>
+                    <strong>End RecSys Challenge</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>20 June, 2025</td>
+                <td>
+                    <strong>Final Leaderboard &amp; Winners</strong>
+                    <p>EasyChair open for submissions</p>
+                </td>
+            </tr>
+            <tr>
+                <td>26 June, 2025</td>
+                <td>
+                    <strong>Code Upload</strong>
+                    <p>Upload code of the final predictions</p>
+                </td>
+            </tr>
+            <tr>
+                <td>7 July, 2025</td>
+                <td>
+                    <strong>Paper Submission Due</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>24 July, 2025</td>
+                <td>
+                    <strong>Paper Acceptance Notifications</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>2 August, 2025</td>
+                <td>
+                    <strong>Camera-Ready Papers</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>September 2025</td>
+                <td>
+                    <strong>RecSys Challenge Workshop</strong>
+                    <p>@ <a href="https://recsys.acm.org/recsys25/">ACM RecSys 2025</a></p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <br>
     <div id="guidelines" class="lead">
