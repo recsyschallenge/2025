@@ -49,13 +49,25 @@
         </h1>
     </div>
     <p align="justify">
-        The RecSys 2025 Challenge will be organized by Jacek Dąbrowski, Maria Janicka, Łukasz Sienkiewicz and Gergo Stomfai (Synerise), Dietmar Jannach (University of Klagenfurt, Austria), Marco Polignano (University of Bari Aldo Moro, Italy), Claudio Pomo (Politecnico di Bari, Italy), Abhishek Srivastava (IIM Visakhapatnam, India), and Francesco Barile (Maastricht University, Netheralnds).
+        The RecSys 2025 Challenge will be organized by Jacek Dąbrowski, Maria Janicka, Łukasz Sienkiewicz and
+        Gergo Stomfai (Synerise), Dietmar Jannach (University of Klagenfurt, Austria), Marco Polignano (
+        University of Bari Aldo Moro, Italy), Claudio Pomo (Politecnico di Bari, Italy), Abhishek Srivastava
+        (IIM Visakhapatnam, India), and Francesco Barile (Maastricht University, Netheralnds).
     </p>
     <p align="justify">
-        The challenge is designed to promote a unified approach to behavior modeling. Many modern enterprises rely on machine learning and predictive analytics for improved business decisions. Common predictive tasks in such organizations include recommendation, propensity prediction, churn prediction, user lifetime value prediction, and many others. A central piece of information that is used for these predictive tasks are logs of past behavior of users e.g., what they bought, what they added to their shopping cart, which pages they visited. Rather than treating these tasks as separate problems, we propose a unified modeling approach.
+        The challenge is designed to promote a unified approach to behavior modeling. Many modern enterprises rely
+        on machine learning and predictive analytics for improved business decisions. Common predictive tasks in
+        such organizations include recommendation, propensity prediction, churn prediction, user lifetime value
+        prediction, and many others. A central piece of information that is used for these predictive tasks are
+        logs of past behavior of users e.g., what they bought, what they added to their shopping cart, which pages
+        they visited. Rather than treating these tasks as separate problems, we propose a unified modeling approach.
     </p>
     <p align="justify">
-        To achieve this, we introduce the concept of Universal Behavioral Profiles—user representations that encode essential aspects of each individual’s past interactions. These profiles are designed to be universally applicable across multiple predictive tasks, such as churn prediction and product recommendations. By developing representations that capture fundamental patterns in user behavior, we enable models to generalize effectively across different applications.
+        To achieve this, we introduce the concept of Universal Behavioral Profiles—user representations that
+        encode essential aspects of each individual’s past interactions. These profiles are designed to be universally
+        applicable across multiple predictive tasks, such as churn prediction and product recommendations.
+        By developing representations that capture fundamental patterns in user behavior, we enable models to
+        generalize effectively across different applications.
     </p>
 
 
@@ -64,34 +76,65 @@
         top</a></sup>
     </h2>
     <p align="justify">
-        The objective of this challenge is to develop Universal Behavioral Profiles  based on the provided data, which includes various types of events such as product buy, add to cart, remove from cart, page visit, and search query. These user representations will be evaluated based on their ability to generalize across a range of predictive tasks. The task of the challenge participants is to submit user representations, which will serve as inputs to a simple neural network architecture. Based on the submitted representations, models will be trained on several tasks, including some that are disclosed to participants, called "open tasks," as well as additional hidden tasks. The final performance score will aggregate results from all tasks. We iterate model training and evaluation automatically upon submission, the task of the participants is to submit universal user representations.
+        The objective of this challenge is to develop Universal Behavioral Profiles  based on the provided data,
+        which includes various types of events such as product buy, add to cart, remove from cart, page visit,
+        and search query. These user representations will be evaluated based on their ability to generalize across
+        a range of predictive tasks. The task of the challenge participants is to submit user representations,
+        which will serve as inputs to a simple neural network architecture. Based on the submitted representations,
+        models will be trained on several tasks, including some that are disclosed to participants, called "open tasks,"
+        as well as additional hidden tasks. The final performance score will aggregate results from all tasks.
+        We iterate model training and evaluation automatically upon submission, the task of the participants is
+        to submit universal user representations.
     </p>
     <p align="justify">
         <strong>Open Tasks</strong>:
         <ul>
             <li>
-                <strong>Churn Prediction</strong>: Using the submitted user representations, the model will predict whether an active user (defined as one with at least one product-buy event) will churn, i.e., make no purchases within the next 14 days.
+                <strong>Churn Prediction</strong>: Using the submitted user representations,
+                the model will predict whether an active user (defined as one with at least one product-buy event)
+                will churn, i.e., make no purchases within the next 14 days.
             </li>
             <li>
-                <strong>Product Propensity</strong>: Using the submitted user representations, the model will predict products which a user is most likely to purchase within the next 14 days, from a predefined subset of items. 
+                <strong>Product Propensity</strong>: Using the submitted user representations,
+                the model will predict products which a user is most likely to purchase within the next 14 days,
+                from a predefined subset of items.
             </li>
             <li>
-                <strong>Category Propensity</strong>: Using the submitted user representations, the model will predict the categories in which a user is most likely to make a purchase within the next 14 days, from a predefined subset of categories.
+                <strong>Category Propensity</strong>: Using the submitted user representations,
+                the model will predict the categories in which a user is most likely to make a
+                purchase within the next 14 days, from a predefined subset of categories.
             </li>
         </ul>
     </p>
     <p align="justify">
         <strong>Hidden Tasks</strong>:
         <p align="justify">
-            In addition to the open tasks, the challenge includes hidden tasks, which remain undisclosed during the competition. The purpose of these tasks is to ensure that submitted Universal Behavioral Profiles are capable of generalization rather than being fine-tuned for specific known objectives. Similar to the open tasks, the hidden tasks focus on predicting user behavior based on the submitted representations, but they introduce new contexts that participants are not explicitly optimizing for.
-            After the competition concludes, the hidden tasks will be disclosed along with the corresponding code, allowing participants to replicate results.
+            In addition to the open tasks, the challenge includes hidden tasks, which remain undisclosed during
+    the competition. The purpose of these tasks is to ensure that submitted Universal Behavioral Profiles are
+    capable of generalization rather than being fine-tuned for specific known objectives. Similar to the open tasks,
+    the hidden tasks focus on predicting user behavior based on the submitted representations, but they introduce new
+    contexts that participants are not explicitly optimizing for.
+            After the competition concludes, the hidden tasks will be disclosed along with the corresponding code,
+    allowing participants to replicate results.
         </p>
     <br>
     <h2>Evaluation<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
         top</a></sup>
     </h2>
     <p align="justify">
-        The primary metric by which we measure model performance is AUROC. Additionally, the performance of category propensity and product recommendation models is evaluated based on the novelty and diversity of the results. In these cases, the task’s score is derived as a weighted sum of all metrics. The final score, which evaluates the quality of user representations and their ability to generalize, is determined by aggregating ranks from the per-task leaderboards.
+        The primary metric by which we measure model performance is AUROC. Additionally, the performance of category
+        propensity and product propensity models is evaluated based on the novelty and diversity of the results. In
+        these cases, the task’s score is derived as a weighted sum of all metrics,
+        specifically 0.8 × AUROC + 0.1 × Novelty + 0.1 × Diversity.
+    </p>
+    <p align="justify">
+        For each task, a leaderboard is created based on the respective task scores. The final score,
+        which evaluates the overall quality of user representations and their ability to generalize, is
+        determined by aggregating ranks from all per-task leaderboards using Borda count method. In this approach,
+        each model's rank in a task leaderboard is converted into points, where a model ranked k-th among N participants
+        receives (N - k) points. The final ranking is based on the total points accumulated across all tasks,
+        ensuring that models performing well consistently across multiple tasks achieve a higher overall score.
+
     </p>
     <br>
     <h2 id="dataset">DataSet<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
@@ -232,7 +275,14 @@
         top</a></sup>
     </h2>
     <p align="justify">
-    TBA
+    <ul>
+        <li>
+            First three teams from the participants - $3500/$2500/$1500
+        </li>
+        <li>
+            Special prize for first three academic teams - $2500/1500/500
+        </li>
+    </ul>
     </p>
     <br>
     <br>
@@ -279,12 +329,7 @@
                 <td>10 April, 2025</td>
                 <td>
                     <strong>Submission System Open</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>10 April, 2025</td>
-                <td>
-                    <strong>Leaderboard live</strong>
+                    <p>Leaderboard live</p>
                 </td>
             </tr>
             <tr>
